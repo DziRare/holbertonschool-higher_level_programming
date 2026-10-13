@@ -8,10 +8,15 @@ import csv
 def convert_csv_to_json(csv_filename):
     """This function is for converting csv to json"""
 
-    with open(csv_filename) as csv_file:
-        dict_list = list(csv.DictReader(csv_file))
-        with open("data.json", "w") as file:
-            json.dump(dict_list, file)
+    try:
+        with open(csv_filename) as csv_file:
+            dict_list = list(csv.DictReader(csv_file))
+            with open("data.json", "w") as file:
+                json.dump(dict_list, file)
+        return True
+    except:
+        print("Error")
+        return False
 
 
 if __name__ == "__main__":
