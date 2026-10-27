@@ -13,7 +13,7 @@ if __name__ == "__main__":
         db=sys.argv[3],
     )
     cur = db.cursor()
-    query = "SELECT cities.id, cities.name, states.name FROM cities " \
+    query = "SELECT cities.name FROM cities " \
             "JOIN states " \
             "ON cities.state_id = states.id " \
             "WHERE states.name LIKE %s" \
@@ -21,11 +21,11 @@ if __name__ == "__main__":
 
     cur.execute(query, (sys.argv[4],))
 
-    rows = cur.fetchall()
-    i = 0
-    try:
-        for i in range(len(rows) - 1):
-            print(rows[i][1] + ", ", end="")
-        print(rows[i + 1][1])
-    except BaseException:
-        pass
+    cities = []
+    row = cur.fetchone()
+    while row:
+        cities.append(row[0])
+        row = cur.fetchone()
+    cities = ", ".join(cities)
+    print(cities)
+
