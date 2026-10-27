@@ -27,5 +27,5 @@ if __name__ == "__main__":
         for i in range(len(rows) - 1):
             print(rows[i][1] + ", ", end="")
         print(rows[i + 1][1])
-    except:
+    except BaseException:
         pass
