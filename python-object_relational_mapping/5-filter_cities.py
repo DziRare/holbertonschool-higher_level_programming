@@ -28,4 +28,3 @@ if __name__ == "__main__":
         row = cur.fetchone()
     cities = ", ".join(cities)
     print(cities)
-
