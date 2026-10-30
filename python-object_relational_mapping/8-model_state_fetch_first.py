@@ -19,7 +19,7 @@ if __name__ == "__main__":
 
     session = Session()
 
-    instance = session.query(State).order_by(State.id.asc())[0]
+    instance = session.query(State).order_by(State.id.asc()).first()
     if instance is None:
         print("Nothing")
     else:
