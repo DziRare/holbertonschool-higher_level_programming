@@ -20,8 +20,8 @@ if __name__ == "__main__":
     session = Session()
 
     instance = session.query(State).\
-            filter(State.name.like(sys.argv[4])).\
-            first()
+        filter(State.name.like(sys.argv[4])).\
+        first()
 
     if instance is None:
         print("Not found")
