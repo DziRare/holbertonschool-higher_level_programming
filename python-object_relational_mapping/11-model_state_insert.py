@@ -20,5 +20,5 @@ if __name__ == "__main__":
     session = Session()
 
     session.add(State(name="Louisiana"))
-    instance = session.query(State).order_by(State.id.asc())[-1]
+    instance = session.query(State).order_by(State.id.desc()).first()
     print(instance.id)
