@@ -19,8 +19,8 @@ if __name__ == "__main__":
 
     session = Session()
 
-    try:
-        instance = session.query(State).order_by(State.id.asc())[0]
-        print(f"{instance.id}: {instance.name}")
-    except BaseException:
+    instance = session.query(State).order_by(State.id.asc())[0]
+    if instance is None:
         print("Nothing")
+    else:
+        print(f"{instance.id}: {instance.name}")
