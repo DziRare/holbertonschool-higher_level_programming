@@ -23,3 +23,4 @@ if __name__ == "__main__":
         update(State).where(State.id == 2).values(name="New Mexico")
     )
     session.commit()
+    session.close()
