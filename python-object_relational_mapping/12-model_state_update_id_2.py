@@ -4,7 +4,7 @@
 if __name__ == "__main__":
     from model_state import Base, State
     from sqlalchemy.orm import sessionmaker
-    from sqlalchemy import create_engine
+    from sqlalchemy import create_engine, update
     import sys
 
     engine = create_engine(
@@ -19,7 +19,7 @@ if __name__ == "__main__":
 
     session = Session()
 
-    session.query(State).filter(State.id == 2).\
-        update({State.name: "New Mexico"})
-
+    session.execute(
+        update(State).where(State.id == 2).values(name="New Mexico")
+    )
     session.commit()
