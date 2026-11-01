@@ -19,7 +19,7 @@ if __name__ == "__main__":
 
     session = Session()
 
-    instance = session.query(State).filter(State.id == 2).first()
-    if instance is not None:
-        instance.name = "New Mexico"
-        session.commit()
+    session.query(State).filter(State.id == 2).\
+        update({State.name: "New Mexico"})
+
+    session.commit()
