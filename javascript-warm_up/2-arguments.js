@@ -9,7 +9,7 @@ if (argv.length <= 2) {
 } else if (argv.length === 3) {
   statement = 'Argument found';
 } else {
-  statement = 'Arguements found';
+  statement = 'Arguments found';
 }
 
 console.log(statement);
