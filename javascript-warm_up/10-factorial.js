@@ -2,7 +2,7 @@
 
 const { argv } = require('node:process');
 
-const factorial = (integer) => {
+function factorial (integer) {
   if (integer === 1) {
     return 1;
   }
@@ -12,6 +12,6 @@ const factorial = (integer) => {
   }
 
   return integer * factorial(integer - 1);
-};
+}
 
 console.log(factorial(parseInt(argv[2])));
