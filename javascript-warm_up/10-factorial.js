@@ -12,6 +12,6 @@ const factorial = (integer) => {
   }
 
   return integer * factorial(integer - 1);
-}
+};
 
 console.log(factorial(parseInt(argv[2])));
