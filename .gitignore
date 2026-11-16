@@ -2,5 +2,5 @@
 .python-version
 *.sql
 __pycache__
-main*
+*main*
 *.csv
