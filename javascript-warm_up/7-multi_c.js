@@ -7,5 +7,5 @@ if (argv[2] === undefined) {
 }
 
 for (let i = 0; i < argv[2]; i++) {
-  console.log(`C is fun`);
+  console.log('C is fun');
 }
